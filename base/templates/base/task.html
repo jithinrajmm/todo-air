@@ -1,0 +1,35 @@
+{% extends 'base/main.html'%} {% block content %}
+<div class="task_detail">
+  <div>
+
+  <table>
+    <tr>
+      <td>USER NAME</td>
+      <td> :&nbsp;{{request.user}}</td>
+    </tr>
+    <tr>
+      <td>TITLE </td>
+      <td> :&nbsp;{{task.title}}</td>
+    </tr>
+    <tr>
+      <td>TASK CREATED </td>
+      <td> :&nbsp;{{task.create}}</td>
+    </tr>
+    <tr>
+      <td>EMAIL </td>
+      <td> :&nbsp;{{task.user.email}}</td>
+    </tr>
+    <tr>
+      <td>STATUS </td>
+      {% if task.complete %}
+      <td>: COMPLETED </td>
+      {% else %}
+
+      <td>: PENDING </td>
+      {% endif %}
+    </tr>
+  </table>
+  <a style="text-align: center; color: wheat; font-weight: bold ;" href="{% url 'tasks' %}">Back To Home</a>
+</div>
+</div>
+{% endblock content %}

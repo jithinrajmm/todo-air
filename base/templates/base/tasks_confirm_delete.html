@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %} {% block content %}
+<div class="task_delete">
+
+<h1>do you want to delete <q>{{task}}</q></h1>
+<!-- default object is object2 -->
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" value="delete" />
+</form>
+</div>
+{% endblock content %}

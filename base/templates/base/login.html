@@ -1,0 +1,20 @@
+{% extends 'base/main.html' %} {% block content %}
+<div class="login_view">
+<form method="post">
+  {%csrf_token%}
+
+  {{form.non_feild.errors}}
+  <label for="{{ form.username.id_for_label }}">Username:</label>
+
+  {{form.username}}
+  <p style="color: red;">{{form.errors}}</p>
+  
+  <label  for="{{ form.password.id_for_label }}">Password:</label>
+  {{form.password}}
+  {{form.password.errors}}
+  <input type="submit" value="login" />
+</form>
+
+<p style="text-align: center; padding:10px;">dont you have an account? <a href="{% url 'register' %}">Sign In</a></p>
+</div>
+{% endblock content %}

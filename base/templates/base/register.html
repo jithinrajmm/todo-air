@@ -1,0 +1,18 @@
+{% extends 'base/main.html' %} {% block content %}
+
+<form method="post">
+  {% csrf_token %} 
+  {{form.non_feild.errors}}
+  {{ form.username.errors }}
+  {{form.username}}
+  {{form.password1.errors}}
+  {{form.password1}}
+  {{form.password2.errors}}
+  {{form.password2}}
+  <!-- {{form.as_p}} -->
+  <input type="submit" value="Register" />
+</form>
+
+<p style="text-align: center; padding:10px;">do you have an account? <a href="{% url 'login' %}">login</a></p>
+
+{% endblock content %}
